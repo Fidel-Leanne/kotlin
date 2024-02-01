@@ -1,16 +1,17 @@
+
+
 fun getGreeting()="hello kotlin"
 
 
-fun sayHello(itemToGreet:String)= println("hello $itemToGreet")
-
-fun main(){
- val interestingThings= arrayOf("Kotlin", 9, "comicBooks")
-    for (i in interestingThings){
-        println(i)
+fun sayHello(itemToGreet: String, vararg itemToGreets: String) {
+    itemToGreets.forEach { i ->
+        println("$itemToGreet, $i")
     }
+}
 
-    interestingThings.forEach { it
-    println(it)
-    }
 
+fun main() {
+    val person= person()
+    //person.nickName="fifi"
+   person.printInfo()
 }
