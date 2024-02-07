@@ -12,7 +12,7 @@ fun sayHello(itemToGreet: String, vararg itemToGreets: String) {
 
 
 fun main() {
-    val person= person()
+    val person= Person()
     //person.nickName="fifi"
    person.printInfo()
 }

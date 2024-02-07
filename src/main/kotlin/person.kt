@@ -1,4 +1,4 @@
-class person (val firstName:String= "peter" ,val lastName:String="Parker"){
+class Person (val firstName:String= "peter" ,val lastName:String="Parker"){
 
     var nickName:String?= null
         set(value){

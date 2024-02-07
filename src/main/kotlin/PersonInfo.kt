@@ -1,29 +1,33 @@
 interface PersonInfo {
-    val provideInfo:String
-    fun printInfo(person: person)
+    val provideInfo: String
+    fun printInfo(person: Person)
 }
 
-interface SessionProvider{
-
-    fun printNewLine(){
-
-        println("i am here")
+interface SessionProvider {
+    fun printNewLine() {
+        println("I am here")
     }
 }
-open class BasicInfo(override val provideInfo: String) : PersonInfo , SessionProvider{
-    override fun printInfo(person: person) {
-        println(provideInfo)
 
+open class BasicInfo(override val provideInfo: String) : PersonInfo, SessionProvider {
+    override fun printInfo(person: Person) {
+        println(provideInfo)
         person.printInfo()
     }
-
-
 }
 
-fun main(){
-    val provider=BasicInfo("fidel")
+fun main() {
+    val provider = object : PersonInfo {
+        override val provideInfo: String
+            get() = "Sample info"
 
-    provider.printInfo(person())
-    provider.printNewLine()
+        override fun printInfo(person: Person) {
+            println("Printing person info")
+        }
+
+
+    }
+
+    provider.printInfo(Person())
+
 }
-
