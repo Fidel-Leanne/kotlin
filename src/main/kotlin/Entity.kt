@@ -51,11 +51,14 @@ sealed class Entity {
 
 // Main function demonstrating the creation of different types of entities
 fun main() {
-    // Create an Easy entity and print its details
-    val entity = EntityFactory.create(EntityType.EASY)
-    println(entity)
 
-    // Create a Medium entity and print its details
-    val mediumEntity = EntityFactory.create(EntityType.MEDIUM)
-    println(mediumEntity)
+
+    val entity:Entity=EntityFactory.create(EntityType.HELP)
+    val msg=when (entity){
+        is Entity.Easy -> "easy class"
+        is Entity.Hard -> "easy class"
+        Entity.Help -> "help class"
+        is Entity.Medium -> "hard class"
+    }
+    println(msg)
 }
