@@ -6,13 +6,15 @@ fun  printFilteredStrings(list:List<String>, predicate: (String)->Boolean){
         }
     }
 
+
+
 fun main(){
         val list = listOf("kotlin", "java", "javasript", "pyttohon")
 
     list.filterNotNull()
         .associate { it to it.length
         }
-        
+
 
         printFilteredStrings(list, {it.startsWith("j")})
     }
